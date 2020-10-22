@@ -3,7 +3,7 @@ version: '3.8'
 # Services or containers to be used
 services:
   polls-dc:       # name of the service/container
-    build: .
+    image: rafaelrfq/polls-dc
     ports:
       - 80:8080
     environment:    # environment variables
