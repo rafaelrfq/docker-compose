@@ -15,10 +15,12 @@ public class DockerComposeApplication {
         UserRepository userRepository = (UserRepository) applicationContext.getBean("userRepository");
 
         if(userRepository.findAll().size() >= 1){
-            System.out.println("Admin user exists");
+            System.out.println("Default users exist");
         } else {
-            User user = new User("rafael", "rafael", "Rafael Felipe", "ADMIN");
-            userRepository.save(user);
+            User user1 = new User("rafael", "rafael", "Rafael Felipe", "ADMIN");
+            User user2 = new User("juan", "juan", "Juan Lopez", "USER");
+            userRepository.save(user1);
+            userRepository.save(user2);
         }
     }
 }
