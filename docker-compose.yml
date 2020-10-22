@@ -11,7 +11,7 @@ services:
     networks:    # network to connect containers
       - polls-network
     volumes:
-      - ~/polls/tmp:/tmp/
+      - polls-volume:/tmp/
     depends_on:   # indicates what to load first
       - db-mysql
 
@@ -27,3 +27,9 @@ services:
       - ~/polls/data:/var/lib/mysql
     networks:
       - polls-network
+
+networks:
+  polls-network:
+
+volumes:
+  polls-volume:
