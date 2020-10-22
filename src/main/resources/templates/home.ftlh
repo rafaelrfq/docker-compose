@@ -20,7 +20,10 @@
                 <a class="nav-link" href="/polls/create">New Poll</a>
             </li>
             <li class="nav-item inline">
-                <a class="nav-link" href="#">Graphs</a>
+                <a class="nav-link" href="/polls/list">Poll List</a>
+            </li>
+            <li class="nav-item inline">
+                <a class="nav-link" href="/dashboard">Dashboard</a>
             </li>
             <#if user??>
                 <li class="nav-item inline">

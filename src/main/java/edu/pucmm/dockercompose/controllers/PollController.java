@@ -43,4 +43,10 @@ public class PollController {
         return "redirect:/";
     }
 
+    @GetMapping("list")
+    public String pollList(Model model){
+        model.addAttribute("polls", pollServices.findAllGradedPolls());
+        return "/polls/list";
+    }
+
 }

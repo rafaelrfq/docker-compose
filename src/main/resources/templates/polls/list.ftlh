@@ -12,9 +12,9 @@
         <table class="table table-striped">
             <thead class="thead-dark">
             <tr>
-                <th scope="col">Date</th>
-                <th scope="col">Name</th>
-                <th scope="col">Total Score</th>
+                <th scope="col">Date Created</th>
+                <th scope="col">User's Name</th>
+                <th scope="col">Values</th>
                 <th scope="col">Comment</th>
                 <th scope="col">Options</th>
             </tr>
@@ -24,8 +24,15 @@
                 <#list polls as poll>
                     <tr>
                         <th scope="row">${poll.dateCreated}</th>
-                        <td>${poll.user.name}</td>
-                        <td>${poll.valueQuestion1?c}</td>
+                        <td>${poll.userGradedPoll.name}</td>
+                        <td>
+                            <p style="font-weight: bold">Questions</p>
+                            <ol>
+                                <li>Question 1: ${poll.valueQuestion1}</li>
+                                <li>Question 2: ${poll.valueQuestion2}</li>
+                                <li>Question 3: ${poll.valueQuestion3}</li>
+                            </ol>
+                        </td>
                         <td>${poll.valueQuestion4}</td>
                         <td>
                             <a class="btn btn-danger" href="/polls/delete=${poll.id}">Delete Poll</a>
