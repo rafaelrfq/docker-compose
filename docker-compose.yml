@@ -5,7 +5,7 @@ services:
   db-mysql:
     image: mysql
     ports:
-      - 3306:3306
+      - 33006:3306
     environment:
       - MYSQL_USER=user
       - MYSQL_PASSWORD=password
