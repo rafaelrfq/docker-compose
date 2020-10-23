@@ -5,7 +5,7 @@ services:
   db-mysql:
     image: mysql
     ports:
-      - 33006:3306
+      - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: 'password'
       MYSQL_DATABASE: 'polls'
