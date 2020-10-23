@@ -20,9 +20,10 @@ services:
     ports:
       - 3306:3306
     environment:
-      - MYSQL_ROOT_PASSWORD=12345678
-      - MYSQL_USER=root
-      - MYSQL_DATABASE=polls
+      - MYSQL_USER: user
+      - MYSQL_PASSWORD: password
+      - MYSQL_ROOT_PASSWORD: password
+      - MYSQL_DATABASE: polls
     volumes:
       - ~/polls/data:/var/lib/mysql
     networks:
