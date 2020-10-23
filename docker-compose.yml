@@ -15,7 +15,7 @@ services:
       - polls-network
 
   polls-dc:       # name of the service/container
-    image: rafaelrfq/polls
+    image: rafaelrfq/polls-sl
     ports:
       - 80:8080
     environment:    # environment variables
