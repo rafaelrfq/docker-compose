@@ -8,9 +8,9 @@ FROM adoptopenjdk/openjdk11:alpine-jre
 LABEL maintainer="Rafael Felipe <20100748@ce.pucmm.edu.do>"
 
 # forma estandar para cambiar la configuracion
-ENV spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/polls
-ENV spring.datasource.username=root
-ENV spring.datasource.password=password
+ENV spring.datasource.url='jdbc:mysql://${MYSQL_HOST:localhost}:3306/polls'
+ENV spring.datasource.username='root'
+ENV spring.datasource.password='password'
 
 # Añadiendo el punto de montaje en el host
 # Por defecto Tomcat crea los archivo temporales en esa ruta,
