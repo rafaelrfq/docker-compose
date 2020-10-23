@@ -2,19 +2,6 @@
 version: '3.8'
 # Services or containers to be used
 services:
-  polls-dc:       # name of the service/container
-    image: rafaelrfq/polls-dc
-    ports:
-      - 80:8080
-    environment:    # environment variables
-      - spring.datasource.url=jdbc:mysql://db-mysql:3306/polls
-    networks:    # network to connect containers
-      - polls-network
-    volumes:
-      - polls-volume:/tmp/
-    depends_on:   # indicates what to load first
-      - db-mysql
-
   db-mysql:
     image: mysql
     ports:
@@ -28,6 +15,20 @@ services:
       - ~/polls/data:/var/lib/mysql
     networks:
       - polls-network
+
+  polls-dc:       # name of the service/container
+    image: rafaelrfq/polls-dc
+    ports:
+      - 80:8080
+    environment:    # environment variables
+      - spring.datasource.url=jdbc:mysql://db-mysql:3306/polls
+      - MYSQL_HOST=db-mysql
+    networks:    # network to connect containers
+      - polls-network
+    volumes:
+      - polls-volume:/tmp/
+    depends_on:   # indicates what to load first
+      - db-mysql
 
 networks:
   polls-network:
